@@ -33,7 +33,7 @@ Instale as dependências dentro de back-ex5 e /db
 ~~~
 npm i
 ~~~~
-Certifique-se de fazer alterações no arquivo conexao.js, dentro de back-ex5/db/ e mudar a senha para a senha do seu banco de dados!
+Certifique-se de fazer alterações no arquivo conexao.js, dentro de back-ex5/db/ e mudar a "senha" para a senha do seu próprio banco de dados!
 Entre na pasta db e execute:
 ~~~
 npm start
