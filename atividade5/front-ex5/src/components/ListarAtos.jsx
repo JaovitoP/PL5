@@ -223,7 +223,10 @@ const HistoricoListagem = () => {
   };
 
   return (
-    <div>
+    <div className="bg-yellow-100 w-screen h-screen">
+      <div className="logo-container">
+        <img src="src/assets/logo.png" />
+      </div>
       <Navbar />
       <div className="flex justify-center">
         <select

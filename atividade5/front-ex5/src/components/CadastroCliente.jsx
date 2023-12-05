@@ -52,7 +52,10 @@ function CadastroCliente() {
   };
 
   return (
-    <div>
+    <div className="bg-yellow-100 w-screen">
+      <div className="logo-container">
+        <img src="src/assets/logo.png" />
+      </div>
       <Navbar />
       <form className="mx-auto w-screen max-w-xl" onSubmit={handleSubmit}>
         <div className="mb-4">
@@ -165,7 +168,7 @@ function CadastroCliente() {
         </div>
         <div className="mb-4">
           <button
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className="px-4 py-2 bg-orange-500 text-white rounded"
             type="submit"
           >
             Cadastrar

@@ -38,20 +38,15 @@ export default function TabelaServicos() {
   }, [servicos]);
 
   return (
-    <div className="bg-gray-100 w-screen h-screen">
+    <div className="bg-yellow-100 w-screen h-screen">
       <div className="logo-container">
         <img src="src/assets/logo.png" />
       </div>
       <Navbar />
-      <button
-        className="w-screen bg-gray-500 text-white"
-        onClick={handleRedirect}
-      >
-        Cadastrar Serviço
-      </button>
+      
       <div className="table-responsive">
         <table className="mx-auto w-screen text-center">
-          <thead className="bg-gray-200">
+          <thead className="bg-yellow-500">
             <tr>
               <th>ID</th>
               <th>Nome</th>
@@ -83,6 +78,12 @@ export default function TabelaServicos() {
           </tbody>
         </table>
       </div>
+      <button
+        className="w-screen text-black h-24 w-32"
+        onClick={handleRedirect}
+      >
+        Cadastrar Serviço
+      </button>
     </div>
   );
 }

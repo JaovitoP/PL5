@@ -35,7 +35,7 @@ export default function TabelaClientes() {
   }, [clientes]);
 
   return (
-    <div className="bg-gray-100 w-screen h-screen">
+    <div className="bg-yellow-100 w-screen h-screen">
       <div className="logo-container">
         <img src="src/assets/logo.png" />
       </div>
@@ -43,7 +43,7 @@ export default function TabelaClientes() {
       <div className="logo-container"></div>
       <div className="table-responsive">
         <table className="mx-auto w-screen text-center">
-          <thead className="bg-gray-200">
+          <thead className="bg-yellow-500">
             <tr>
               <th>ID</th>
               <th>Nome</th>

@@ -47,7 +47,7 @@ function CadastroProduto() {
   };
 
   return (
-    <div>
+    <div className="bg-yellow-100 w-screen h-screen">
       <Navbar />
       <form className="mx-auto w-screen max-w-xl" onSubmit={handleSubmit}>
         <div className="mb-4">
@@ -80,7 +80,7 @@ function CadastroProduto() {
         </div>
         <div className="mb-4">
           <label className="block mb-2" htmlFor="preco">
-            Preço (Reais):
+            Preço:
           </label>
           <input
             className="w-full px-3 py-2 border rounded"
@@ -108,7 +108,7 @@ function CadastroProduto() {
         </div>
         <div className="mb-4">
           <button
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className="px-4 py-2 bg-orange-500 text-white rounded"
             type="submit"
           >
             Cadastrar

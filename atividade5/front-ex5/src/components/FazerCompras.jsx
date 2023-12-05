@@ -67,7 +67,7 @@ export default function FazerCompras() {
 
   const handleButtonClick = () => {
     if (opcaoSelecionada === "") {
-      alert("Selecione uma opção antes de enviar!");
+      alert("Selecione uma opção antes de enviar");
     } else {
       handleEnviar();
     }
@@ -152,7 +152,7 @@ export default function FazerCompras() {
   };
 
   return (
-    <div>
+    <div className="bg-yellow-100 w-screen h-screen">
       <Navbar />
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -196,7 +196,7 @@ export default function FazerCompras() {
           <h2 className="text-xl font-bold mb-4">Opções disponíveis:</h2>
           {opcaoSelecionada === "" && (
             <select className="w-full p-2 border rounded">
-              <option value="">Selecione uma opção acima!</option>
+              <option value="">Selecione uma opção acima</option>
             </select>
           )}
           {opcaoSelecionada === "produto" && (
@@ -249,7 +249,7 @@ export default function FazerCompras() {
         </div>
         <div className="mt-8 flex justify-center">
           <button
-            className="bg-blue-500 text-white px-6 py-3 rounded-lg"
+            className="bg-orange-500 text-white px-6 py-3 rounded-lg"
             onClick={handleButtonClick}
             disabled={!opcaoSelecionada}
           >
