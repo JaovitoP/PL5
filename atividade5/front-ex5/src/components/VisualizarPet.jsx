@@ -27,7 +27,9 @@ function VisualizarPet() {
   }, [id]);
 
   const handleDelete = () => {
-    const confirmDelete = window.confirm("Tem certeza que deseja excluir o pet?");
+    const confirmDelete = window.confirm(
+      "Tem certeza que deseja excluir o pet?"
+    );
 
     if (confirmDelete) {
       fetch(`http://localhost:3000/pet/alterarStatus/${id}`, {

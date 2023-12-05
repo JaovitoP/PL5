@@ -15,7 +15,9 @@ function VisualizarServico() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/service/listar/${id}`);
+        const response = await fetch(
+          `http://localhost:3000/service/listar/${id}`
+        );
         const data = await response.json();
         setServico(data);
       } catch (error) {
@@ -27,7 +29,9 @@ function VisualizarServico() {
   }, [id]);
 
   const handleDelete = () => {
-    const confirmDelete = window.confirm("Tem certeza que deseja excluir o serviço?");
+    const confirmDelete = window.confirm(
+      "Tem certeza que deseja excluir o serviço?"
+    );
 
     if (confirmDelete) {
       fetch(`http://localhost:3000/service/alterarStatus/${id}`, {

@@ -44,13 +44,16 @@ export default function AtualizarCliente() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:3000/user/atualizarUsuario/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(cliente),
-      });
+      const response = await fetch(
+        `http://localhost:3000/user/atualizarUsuario/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(cliente),
+        }
+      );
 
       if (response.ok) {
         // Atualização bem-sucedida
@@ -179,7 +182,10 @@ export default function AtualizarCliente() {
           />
         </div>
         <div className="mb-4">
-          <button className="px-4 py-2 bg-blue-500 text-white rounded" type="submit">
+          <button
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+            type="submit"
+          >
             Atualizar
           </button>
         </div>
@@ -189,4 +195,3 @@ export default function AtualizarCliente() {
 }
 
 export { AtualizarCliente };
-

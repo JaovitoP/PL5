@@ -1,33 +1,35 @@
-import React, { useEffect, useState } from "react"
-import { useParams, useNavigate } from "react-router-dom"
-import { Navbar } from "./Navbar"
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { Navbar } from "./Navbar";
 
 function VisualizarCliente() {
-  const { id } = useParams()
-  const [cliente, setCliente] = useState(null)
+  const { id } = useParams();
+  const [cliente, setCliente] = useState(null);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleEditar = () => {
-    navigate(`/atualizar/${id}`)
-  }
+    navigate(`/atualizar/${id}`);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/user/listar/${id}`)
-        const data = await response.json()
-        setCliente(data)
+        const response = await fetch(`http://localhost:3000/user/listar/${id}`);
+        const data = await response.json();
+        setCliente(data);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
-    }
+    };
 
-    fetchData()
-  }, [id])
+    fetchData();
+  }, [id]);
 
   const handleDelete = () => {
-    const confirmDelete = window.confirm("Tem certeza que deseja excluir o cliente?")
+    const confirmDelete = window.confirm(
+      "Tem certeza que deseja excluir o cliente?"
+    );
 
     if (confirmDelete) {
       fetch(`http://localhost:3000/user/alterarStatus/${id}`, {
@@ -40,22 +42,22 @@ function VisualizarCliente() {
         .then((response) => {
           if (response.ok) {
             // Exclusão bem-sucedida
-            alert("Cliente excluído com sucesso.")
-            navigate("/clientes")
+            alert("Cliente excluído com sucesso.");
+            navigate("/clientes");
           } else {
             // Ocorreu um erro na exclusão
-            alert("Ocorreu um erro ao excluir o cliente.")
-            navigate("/clientes")
+            alert("Ocorreu um erro ao excluir o cliente.");
+            navigate("/clientes");
           }
         })
         .catch((error) => {
-          console.error(error)
-        })
+          console.error(error);
+        });
     }
-  }
+  };
 
   if (!cliente) {
-    return <div>Cliente não encontrado...</div>
+    return <div>Cliente não encontrado...</div>;
   }
 
   return (
@@ -81,9 +83,7 @@ function VisualizarCliente() {
           </tr>
           <tr className="border border-black">
             <th>Celular</th>
-            <td>
-              {cliente.cep}
-            </td>
+            <td>{cliente.cep}</td>
           </tr>
           <tr className="border border-black">
             <th>CEP</th>
@@ -104,7 +104,7 @@ function VisualizarCliente() {
         </tfoot>
       </table>
     </div>
-  )
+  );
 }
 
-export default VisualizarCliente
+export default VisualizarCliente;

@@ -15,7 +15,9 @@ function VisualizarProduto() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/product/listar/${id}`);
+        const response = await fetch(
+          `http://localhost:3000/product/listar/${id}`
+        );
         const data = await response.json();
         setProduto(data);
       } catch (error) {
@@ -27,7 +29,9 @@ function VisualizarProduto() {
   }, [id]);
 
   const handleDelete = () => {
-    const confirmDelete = window.confirm("Tem certeza que deseja excluir o produto?");
+    const confirmDelete = window.confirm(
+      "Tem certeza que deseja excluir o produto?"
+    );
 
     if (confirmDelete) {
       fetch(`http://localhost:3000/product/alterarStatus/${id}`, {

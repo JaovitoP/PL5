@@ -17,7 +17,9 @@ function AtualizarServicos() {
   useEffect(() => {
     const fetchServico = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/service/listar/${id}`);
+        const response = await fetch(
+          `http://localhost:3000/service/listar/${id}`
+        );
         const data = await response.json();
         setServico(data);
       } catch (error) {
@@ -40,13 +42,16 @@ function AtualizarServicos() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:3000/service/atualizar/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(servico),
-      });
+      const response = await fetch(
+        `http://localhost:3000/service/atualizar/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(servico),
+        }
+      );
 
       if (response.ok) {
         // Atualização bem-sucedida

@@ -31,17 +31,20 @@ export default function TabelaPets() {
     if (pets.length > 0) {
       const petsAtivos = pets.filter((pet) => pet.status === true);
       setPetsAtivos(petsAtivos);
-      console.log('Pets Ativos:', petsAtivos);
+      console.log("Pets Ativos:", petsAtivos);
     }
   }, [pets]);
 
   return (
     <div className="bg-gray-100 w-screen h-screen">
       <div className="logo-container">
-      <img src="src/assets/logo.png"/>
-    </div>
+        <img src="src/assets/logo.png" />
+      </div>
       <Navbar />
-      <button className="w-screen bg-gray-500 text-white" onClick={handleRedirect}>
+      <button
+        className="w-screen bg-gray-500 text-white"
+        onClick={handleRedirect}
+      >
         Cadastrar Pet
       </button>
       <div className="table-responsive">
@@ -80,4 +83,4 @@ export default function TabelaPets() {
       </div>
     </div>
   );
-};
+}

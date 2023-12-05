@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Navbar } from "./Navbar";
 
-export default function TabelaClientes () {
+export default function TabelaClientes() {
   const [clientes, setClientes] = useState([]);
   const [clientesAtivos, setClientesAtivos] = useState([]);
 
@@ -28,20 +28,19 @@ export default function TabelaClientes () {
   };
 
   useEffect(() => {
-    const clientesAtivos = clientes.filter((cliente) => cliente.status_usuario === true);
+    const clientesAtivos = clientes.filter(
+      (cliente) => cliente.status_usuario === true
+    );
     setClientesAtivos(clientesAtivos);
   }, [clientes]);
 
   return (
-    
     <div className="bg-gray-100 w-screen h-screen">
       <div className="logo-container">
-      <img src="src/assets/logo.png"/>
-    </div>
-      <Navbar />
-      <div className="logo-container">
-
+        <img src="src/assets/logo.png" />
       </div>
+      <Navbar />
+      <div className="logo-container"></div>
       <div className="table-responsive">
         <table className="mx-auto w-screen text-center">
           <thead className="bg-gray-200">
@@ -54,7 +53,7 @@ export default function TabelaClientes () {
               <th>Ações</th>
             </tr>
           </thead>
-      
+
           <tbody className="bg-gray-100 p-2">
             {clientesAtivos.length > 0 ? (
               clientesAtivos.map((cliente) => (
@@ -65,7 +64,9 @@ export default function TabelaClientes () {
                   <td>{cliente.celular}</td>
                   <td>{cliente.cep}</td>
                   <td>
-                    <Link to={`/clientes/${cliente.id_usuario}`}>Visualizar</Link>
+                    <Link to={`/clientes/${cliente.id_usuario}`}>
+                      Visualizar
+                    </Link>
                   </td>
                 </tr>
               ))
@@ -77,11 +78,14 @@ export default function TabelaClientes () {
           </tbody>
         </table>
         <div className="button-container">
-          <button className="w-screen text-black h-24 w-32" onClick={handleRedirect}>
-          Cadastrar Cliente
-        </button>
-      </div>
+          <button
+            className="w-screen text-black h-24 w-32"
+            onClick={handleRedirect}
+          >
+            Cadastrar Cliente
+          </button>
+        </div>
       </div>
     </div>
   );
-};
+}

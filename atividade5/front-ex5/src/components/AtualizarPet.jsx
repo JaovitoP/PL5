@@ -40,13 +40,16 @@ function AtualizarPet() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:3000/pet/atualizar/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(pet),
-      });
+      const response = await fetch(
+        `http://localhost:3000/pet/atualizar/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(pet),
+        }
+      );
 
       if (response.ok) {
         // Atualização bem-sucedida
@@ -126,7 +129,10 @@ function AtualizarPet() {
           </select>
         </div>
         <div className="mb-4">
-          <button className="px-4 py-2 bg-blue-500 text-white rounded" type="submit">
+          <button
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+            type="submit"
+          >
             Atualizar
           </button>
         </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Navbar } from "./Navbar";
 
-export default function TabelaProdutos () {
+export default function TabelaProdutos() {
   const [produtos, setProdutos] = useState([]);
   const [produtosAtivos, setProdutosAtivos] = useState([]);
 
@@ -29,19 +29,24 @@ export default function TabelaProdutos () {
 
   useEffect(() => {
     if (produtos.length > 0) {
-      const produtosAtivos = produtos.filter((produto) => produto.status === true);
+      const produtosAtivos = produtos.filter(
+        (produto) => produto.status === true
+      );
       setProdutosAtivos(produtosAtivos);
-      console.log('Produtos Ativos:', produtosAtivos);
+      console.log("Produtos Ativos:", produtosAtivos);
     }
   }, [produtos]);
 
   return (
     <div className="bg-gray-100 w-screen h-screen">
       <div className="logo-container">
-      <img src="src/assets/logo.png"/>
-    </div>
+        <img src="src/assets/logo.png" />
+      </div>
       <Navbar />
-      <button className="w-screen bg-gray-500 text-white" onClick={handleRedirect}>
+      <button
+        className="w-screen bg-gray-500 text-white"
+        onClick={handleRedirect}
+      >
         Cadastrar Produto
       </button>
       <div className="table-responsive">
@@ -64,7 +69,9 @@ export default function TabelaProdutos () {
                   <td>{produto.descricao}</td>
                   <td>{produto.preco}</td>
                   <td>
-                    <Link to={`/produtos/${produto.id_produto}`}>Visualizar</Link>
+                    <Link to={`/produtos/${produto.id_produto}`}>
+                      Visualizar
+                    </Link>
                   </td>
                 </tr>
               ))
@@ -78,4 +85,4 @@ export default function TabelaProdutos () {
       </div>
     </div>
   );
-};
+}

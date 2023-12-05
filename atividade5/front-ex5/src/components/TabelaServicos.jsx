@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Navbar } from "./Navbar";
 
-export default function TabelaServicos () {
+export default function TabelaServicos() {
   const [servicos, setServicos] = useState([]);
   const [servicosAtivos, setServicosAtivos] = useState([]);
 
@@ -29,19 +29,24 @@ export default function TabelaServicos () {
 
   useEffect(() => {
     if (servicos.length > 0) {
-      const servicosAtivos = servicos.filter((servico) => servico.status === true);
+      const servicosAtivos = servicos.filter(
+        (servico) => servico.status === true
+      );
       setServicosAtivos(servicosAtivos);
-      console.log('Serviços Ativos:', servicosAtivos);
+      console.log("Serviços Ativos:", servicosAtivos);
     }
   }, [servicos]);
 
   return (
     <div className="bg-gray-100 w-screen h-screen">
       <div className="logo-container">
-      <img src="src/assets/logo.png"/>
-    </div>
+        <img src="src/assets/logo.png" />
+      </div>
       <Navbar />
-      <button className="w-screen bg-gray-500 text-white" onClick={handleRedirect}>
+      <button
+        className="w-screen bg-gray-500 text-white"
+        onClick={handleRedirect}
+      >
         Cadastrar Serviço
       </button>
       <div className="table-responsive">
@@ -64,7 +69,9 @@ export default function TabelaServicos () {
                   <td>{servico.descricao}</td>
                   <td>{servico.preco}</td>
                   <td>
-                    <Link to={`/servicos/${servico.id_servico}`}>Visualizar</Link>
+                    <Link to={`/servicos/${servico.id_servico}`}>
+                      Visualizar
+                    </Link>
                   </td>
                 </tr>
               ))
@@ -78,4 +85,4 @@ export default function TabelaServicos () {
       </div>
     </div>
   );
-};
+}
